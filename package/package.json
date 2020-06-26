@@ -1,0 +1,42 @@
+{
+  "name": "@neomorphism/ng-neomorphism",
+  "version": "0.0.13",
+  "peerDependencies": {
+    "@angular/common": "^9.1.11",
+    "@angular/core": "^9.1.11"
+  },
+  "dependencies": {
+    "@angular/cdk": "^9.2.4",
+    "@angular/material": "^9.2.4",
+    "tslib": "^1.10.0"
+  },
+  "main": "bundles/ng-neomorphism.umd.js",
+  "module": "fesm5/ng-neomorphism.js",
+  "es2015": "fesm2015/ng-neomorphism.js",
+  "esm5": "esm5/ng-neomorphism.js",
+  "esm2015": "esm2015/ng-neomorphism.js",
+  "fesm5": "fesm5/ng-neomorphism.js",
+  "fesm2015": "fesm2015/ng-neomorphism.js",
+  "typings": "ng-neomorphism.d.ts",
+  "metadata": "ng-neomorphism.metadata.json",
+  "sideEffects": false,
+  "description": "Angular Neomorphism SCSS framework",
+  "scripts": {
+    "test": "ng test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angular-Neumorphism/ng-neomorphism.git"
+  },
+  "keywords": [
+    "Angular",
+    "Neomorphism",
+    "Neumorphism"
+  ],
+  "author": "DevPipe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Angular-Neumorphism/ng-neomorphism/issues"
+  },
+  "homepage": "https://angular-neomorphism.web.app/"
+}

@@ -1,0 +1,23 @@
+@import "~@angular/material/theming";
+@import "../../../src/core/theme/theme.scss";
+
+@mixin neo-progress-bar-color() {
+
+    .neo-progress-bar {
+        background-color: #ebebeb;
+        box-shadow: inset 1px 1px 1px mat-color($neo-light-theme-foreground, dark-shadow, 0.3),
+          inset -1px -1px 1px mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+
+    .neo-progress-bar-background {
+      fill: mat-color($neo-light-theme, primary);
+    }
+  
+    .neo-progress-bar-fill::after {
+      background-color: mat-color($neo-light-theme, primary);
+    }
+}
+
+
+

@@ -1,0 +1,14 @@
+@import "~@angular/material/theming";
+@import "../core/theme/theme.scss";
+@import "./input.mixins";
+
+
+@mixin neo-form-field-background($color) {
+  $input-color: darken($color, 5%);
+
+  &.neo-form-field {
+    @include neo-input-background-with-form-field($input-color);
+    background-color: $color;
+  }
+}
+

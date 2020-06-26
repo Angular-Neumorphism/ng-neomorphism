@@ -1,0 +1,212 @@
+@import "./card.theme";
+@import "../../../neo-divider/src/neo-divider/neo-divider.component.scss";
+
+@include neo-card-color();
+@include neo-card-typography();
+
+$neo-card-padding-vertical: 24px !default;
+$neo-card-padding-horizontal: 32px !default;
+$neo-card-border-radius: 8px !default;
+$neo-card-header-size: 48px !default;
+
+.neo-card {
+  display: block;
+  position: relative;
+  padding: $neo-card-padding-vertical $neo-card-padding-horizontal;
+  border-radius: $neo-card-border-radius;
+
+  .neo-divider-horizontal {
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    [dir="rtl"] & {
+      left: auto;
+      right: 0;
+    }
+
+    &.neo-divider-inset {
+      position: static;
+      margin: 0;
+
+      [dir="rtl"] & {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// base styles for each card section preset (neo-card-content, etc)
+%neo-card-section-base {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.neo-card-title {
+  display: block;
+  margin-top: 3px;
+  margin-bottom: 8px;
+}
+
+.neo-card-subtitle, .neo-card-content {
+  @extend %neo-card-section-base;
+}
+
+.neo-card-subtitle {
+  margin-bottom: 24px;
+}
+.neo-card-actions {
+  @extend %neo-card-section-base;
+  margin-left: -$neo-card-padding-horizontal / 2;
+  margin-right: -$neo-card-padding-horizontal  / 2;
+  padding: 8px 0;
+}
+
+.neo-card-actions-align-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.neo-card-actions-align-cenyet {
+  display: flex;
+  justify-content: center;
+}
+
+.neo-card-image {
+  width: calc(100% + #{$neo-card-padding-horizontal * 2});
+  margin: 0 (-$neo-card-padding-horizontal) 16px (-$neo-card-padding-horizontal);
+}
+
+.neo-card-footer {
+  // The negative margins pulls out the element, countering the padding
+  // to get the footer to be flush against the side of the card.
+  $margin: -$neo-card-padding-vertical;
+
+  display: block;
+  margin: 0 0 $margin 0;
+}
+
+.neo-card-actions {
+  .neo-button,
+  .mat-button,
+  .mat-raised-button,
+  .mat-stroked-button {
+    margin: 0 12px;
+  }
+}
+
+// HEADER STYLES
+
+.neo-card-header {
+  display: flex;
+  flex-direction: row;
+
+  .neo-card-title {
+    margin-bottom: 12px;
+  }
+}
+
+.neo-card-header-text {
+  margin: 0 18px;
+}
+
+.neo-card-avatar {
+  height: $neo-card-header-size;
+  width: $neo-card-header-size;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  // Makes `<img>` tags behave like `background-size: cover`. Not supported
+  // in IE, but we're using it as a progressive enhancement.
+  object-fit: cover;
+}
+
+.neo-card-title-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.neo-card-sm-image {
+  width: 80px;
+  height: 80px;
+}
+
+.neo-card-md-image {
+  width: 112px;
+  height: 112px;
+}
+
+.neo-card-lg-image {
+  width: 152px;
+  height: 152px;
+}
+
+// This should normally also extend the `%mat-card-title-img`, but in order to avoid breaking
+// changes, we need to keep the horizontal margin reversion for now.
+// See: https://github.com/angular/components/issues/12203
+.neo-card-xl-image {
+  width: 240px;
+  height: 240px;
+  margin: -8px;
+
+  // Special treatment inside title group in order to fix the media areas inside of a title-group.
+  // This can be removed once #12203 has been addressed.
+  .neo-card-title-group > & {
+    // As per Material Design specifications, the images exceed the *top* content-box and take
+    // up some space. The margin below is necessary because otherwise space of the actual card
+    // content will be overlapped.
+    margin: -8px 0 8px;
+  }
+}
+
+
+// MEDIA QUERIES
+
+// @media ($mat-xsmall) {
+//   .mat-card-title-group {
+//     margin: 0;
+//   }
+// }
+
+// FIRST/LAST CHILD ADJUSTMENTS
+
+// top els in mat-card-content and mat-card can't have their default margin-tops (e.g. <p> tags)
+// or they'll incorrectly add to card's top padding
+.neo-card > :first-child,
+.neo-card-content > :first-child {
+  margin-top: 0;
+}
+
+// last els in mat-card-content and mat-card can't have their default margin-bottoms (e.g. <p> tags)
+// or they'll incorrectly add to card's bottom padding
+.neo-card > :last-child:not(.neo-card-footer),
+.neo-card-content > :last-child:not(.neo-card-footer) {
+  margin-bottom: 0;
+}
+
+// actions panel on bottom should be 8px from bottom of card
+// so must strip 16px from default card padding
+.neo-card > .neo-card-actions:last-child {
+  margin-bottom: -8px;
+  padding-bottom: 0;
+}
+
+// actions panel should always be 8px from sides,
+// so the first button in the actions panel can't add its own margins
+.neo-card-actions {
+  .neo-button,
+  .mat-button,
+  .mat-raised-button,
+  .mat-stroked-button {
+    &:first-child {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+// should be 12px space between titles and subtitles generally
+// default margin-bottom is 16px, so need to move lower title up 4px
+.neo-card-subtitle:not(:first-child) {
+  margin-top: -8px;
+}

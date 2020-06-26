@@ -1,0 +1,14 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [true, "attribute", "app", "neo", "camelCase"],
+    "component-selector": [true, "element", "app", "neo", "kebab-case"],
+    "component-class-suffix": false,
+    "directive-class-suffix": false,
+    "no-host-metadata-property": false,
+    "no-inputs-metadata-property": false,
+    "variable-name": {
+      "options": ["ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"]
+    }
+  }
+}

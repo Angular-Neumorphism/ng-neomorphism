@@ -1,0 +1,55 @@
+@import "~@angular/material/theming";
+@import "../core/theme/theme.scss";
+
+
+@mixin neo-input-background-with-form-field($color) {
+  .neo-input-element {
+    background-color: $color;
+    box-shadow: inset 1px 1px 2px darken($color, 15%),
+      inset -1px -1px 2px lighten($color, 15%);
+  }
+
+  .neo-input-element:hover:not([disabled]) {
+    box-shadow: inset 2px 2px 5px darken($color, 15%),
+      inset -2px -2px 5px lighten($color, 15%);
+  }
+
+  .neo-input-element:focus:not([disabled]),
+  .neo-input-element:active:not([disabled]) {
+    box-shadow: inset 4px 4px 8px darken($color, 15%),
+      inset -4px -4px 8px lighten($color, 15%);
+  }
+
+  .neo-input-element:disabled {
+    background-color: lighten($color, 10%);
+    box-shadow: inset 2px 2px 5px darken($color, 12%),
+      inset -2px -2px 5px lighten($color, 12%);
+  }
+}
+
+@mixin neo-input-background($color) { 
+  // redundant classes we need to have more specific than neo-input-background-with-form-field
+  &.neo-input.mat-input-element.neo-input-element {
+    background-color: $color;
+    box-shadow: inset 1px 1px 2px darken($color, 15%),
+      inset -1px -1px 2px lighten($color, 15%);
+  }
+
+  &.neo-input.mat-input-element.neo-input-element:hover:not([disabled]) {
+    box-shadow: inset 2px 2px 5px darken($color, 15%),
+      inset -2px -2px 5px lighten($color, 15%);
+  }
+
+  &.neo-input.mat-input-element.neo-input-element:focus:not([disabled]),
+  &.neo-input.mat-input-element.neo-input-element:active:not([disabled]) {
+    box-shadow: inset 4px 4px 8px darken($color, 15%),
+      inset -4px -4px 8px lighten($color, 15%);
+  }
+
+  &.neo-input.mat-input-element.neo-input-element:disabled {
+    background-color: lighten($color, 10%);
+    box-shadow: inset 2px 2px 5px darken($color, 12%),
+      inset -2px -2px 5px lighten($color, 12%);
+  }
+}
+

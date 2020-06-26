@@ -1,0 +1,26 @@
+@import "~@angular/material/theming";
+@import "../core/theme/theme.scss";
+
+
+
+@mixin neo-progress-bar-background($color) { 
+  // redundant classes we need to have more specific than neo-input-background-with-form-field
+
+  &.neo-progress-bar[mode]  {
+    background-color: $color;
+    box-shadow: inset 1px 1px 1px darken($color, 15%),
+      inset -1px -1px 1px lighten($color, 15%);
+  }
+}
+
+
+@mixin neo-container-progress-bar-background($color) { 
+  background-color: $color;
+  & .neo-progress-bar {
+    background-color: $color;
+    box-shadow: inset 1px 1px 1px darken($color, 25%),
+      inset -1px -1px 1px lighten($color, 5%);
+  }
+  
+}
+
