@@ -1,0 +1,14 @@
+@import "~@angular/material/theming";
+@import "../core/theme/theme.scss";
+
+@mixin neo-tabs-background($color) {
+  background-color: $color;
+  @include neo-tabs-header-background(darken($color, 5%));
+}
+@mixin neo-tabs-header-background($color) {
+  .neo-focused-tab {
+    background-color: $color;
+    box-shadow: inset 2px 2px 5px darken($color, 15%),
+      inset -3px -3px 5px lighten($color, 20%);
+  }
+}

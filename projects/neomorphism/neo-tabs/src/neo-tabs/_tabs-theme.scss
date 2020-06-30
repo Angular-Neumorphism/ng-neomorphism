@@ -1,0 +1,71 @@
+@import "~@angular/material/theming";
+@import "../../../src/core/theme/theme.scss";
+@import "../../../src/core/typography/typography.scss";
+
+@mixin neo-tabs-color() {
+  .neo-tab-label,
+  .neo-tab-link {
+    color: mat-color($neo-light-theme-foreground, text);
+
+    &.neo-tab-disabled {
+      color: mat-color($neo-light-theme-foreground, disabled-text);
+    }
+  }
+
+  .neo-tab-header-pagination-chevron {
+    color: mat-color($neo-light-theme-foreground, text);
+  }
+
+  .neo-tab-header-pagination-disabled .neo-tab-header-pagination-chevron {
+    color: mat-color($neo-light-theme-foreground, disabled-text);
+  }
+
+  .neo-tab-label {
+    &:not(.neo-tab-disabled):hover {
+      color: mat-color($neo-light-theme, primary);
+    }
+
+    &:not(.neo-tab-disabled):focus {
+      color: mat-color($neo-light-theme, primary);
+    }
+
+    &.neo-tab-disabled {
+      .neo-tab-label {
+        color: mat-color($neo-light-theme-foreground, disabled-text);
+      }
+
+      &::before {
+        box-shadow: inset 1px 1px 2px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.2);
+      }
+
+      &::after {
+        box-shadow: inset -1px -1px 2px
+          mat-color($neo-light-theme-foreground, light-shadow);
+      }
+    }
+  }
+
+  .neo-focused-tab {
+    box-shadow: inset 2px 2px 5px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.3),
+      inset -3px -3px 5px mat-color($neo-light-theme-foreground, light-shadow);
+  }
+}
+
+@mixin neo-tabs-typography() {
+  $font-family: Open Sans;
+  $font-weight: 14px;
+  .neo-tab-group {
+    font-family: $font-family;
+  }
+
+  .neo-tab-label,
+  .neo-tab-link {
+    font: {
+      family: $font-family;
+      size: $font-weight;
+      weight: normal;
+    }
+  }
+}

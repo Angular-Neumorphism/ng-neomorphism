@@ -17,7 +17,8 @@ import { NumberInput } from '@angular/cdk/coercion';
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'neo-progress-bar',
-  }
+  },
+  inputs: ['value', 'bufferValue', 'mode', 'color']
 })
 export class NeoProgressBar extends MatProgressBar
   implements AfterViewInit, OnDestroy {
@@ -25,7 +26,7 @@ export class NeoProgressBar extends MatProgressBar
     super(_neoElementRef, _ngZone);
   }
 
-  AfterViewInit() {
+  ngAfterViewInit() {
     super.ngAfterViewInit();
   }
   ngOnDestroy() {
