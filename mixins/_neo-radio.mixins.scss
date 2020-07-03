@@ -1,0 +1,37 @@
+@mixin neo-radio-background($color) {
+    &.neo-radio-button {
+      &:not(.neo-radio-disabled)::before {
+        background-color: $color;
+        box-shadow: inset 1px 1px 2px darken($color, 15%);
+      }
+      &:not(.neo-radio-disabled)::after {
+        box-shadow: inset -1px -1px 2px lighten($color, 15%);
+      }
+  
+      &:not(.neo-radio-disabled):hover::before {
+        box-shadow: inset 2px 2px 4px darken($color, 15%);
+      }
+      &:not(.neo-radio-disabled):hover::after {
+        box-shadow: inset -2px -2px 4px lighten($color, 15%);
+      }
+  
+      &:not(.neo-radio-disabled):active::before {
+        box-shadow: inset 2px 2px 5px darken($color, 15%);
+      }
+  
+      &:not(.neo-radio-disabled):active::after {
+        box-shadow: inset -3px -3px 5px lighten($color, 15%);
+      }
+    }
+  
+    &.neo-radio-disabled {
+      &::before {
+        background-color: lighten($color, 10%);
+        box-shadow: inset 1px 1px 2px darken($color, 5%);
+      }
+  
+      &::after {
+        box-shadow: inset -3px -3px 5px lighten($color, 12%);
+      }
+    }
+  }
