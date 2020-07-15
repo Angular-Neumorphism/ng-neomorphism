@@ -11,6 +11,7 @@ Our [Patreon page](https://www.patreon.com/neomorphism)
 
 For now you can use next Neomorphism modules
 ```
+Badge module
 Button module
 Card module
 Checkbox module
@@ -19,6 +20,7 @@ Input module
 Form-field module
 Progressbar module
 Radio-button module
+Slide-toggle module
 Tabs module
 Toolbar module
 ```

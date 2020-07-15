@@ -1,0 +1,37 @@
+@import "~@angular/material/theming";
+@import "../../../src/core/theme/theme.scss";
+
+@mixin neo-dialog-color() {
+  .neo-dialog-container {
+    background: mat-color($neo-light-theme-background, dialog-background);
+    color: mat-color($neo-light-theme-foreground, text);
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    box-shadow: 2px 2px 5px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.2),
+      inset 2px 2px 5px mat-color($neo-light-theme-foreground, light-shadow),
+      inset -2px -2px 5px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.3);
+  }
+}
+
+@mixin mat-dialog-typography() {
+  .neo-dialog-title {
+    color: mat-color($neo-light-theme-foreground, title);
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .neo-dialog-container {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

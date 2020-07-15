@@ -1,6 +1,6 @@
 {
   "name": "@neomorphism/ng-neomorphism",
-  "version": "0.0.13",
+  "version": "0.0.32",
   "peerDependencies": {
     "@angular/common": "^9.1.11",
     "@angular/core": "^9.1.11"
