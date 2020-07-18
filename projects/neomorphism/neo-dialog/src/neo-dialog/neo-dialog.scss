@@ -1,7 +1,9 @@
 @import './neo-dialog.theme.scss';
+@import '../../../src/core/cdk/overlay-styles.scss';
 
 @include neo-dialog-color();
-@include mat-dialog-typography();
+@include neo-dialog-typography();
+@include cdk-overlay();
 
 $neo-dialog-padding: 24px !default;
 $neo-dialog-border-radius: 8px !default;
