@@ -23,6 +23,8 @@ Input module
 Form-field module
 Progressbar module
 Radio-button module
+Ripple module
+Slider module
 Slide-toggle module
 Snack-bar module
 Tabs module
