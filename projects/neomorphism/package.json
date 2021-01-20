@@ -9,7 +9,7 @@
     "@angular/cdk": "^9.2.4",
     "@angular/material": "^9.2.4",
     "rgb-hex": "^3.0.0",
-    "gsap": "^3.2.6",
+    "gsap": "^3.6.0",
     "tslib": "^1.10.0",
     "@neomorphism/ng-neomorphism": "^0.44.0"
   }
